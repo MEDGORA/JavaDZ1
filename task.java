@@ -6,7 +6,7 @@ public class task {
     public static void main(String[] args) {
     System.out.println(isSumBetween10And20(5, 15)); // true
     System.out.println(isSumBetween10And20(7, 15)); // false
-
+    
     System.out.println(isPositive(5)); // true
     System.out.println(isPositive(-3)); // false
 
@@ -15,7 +15,13 @@ public class task {
     int[][] array = new int[4][4]; // [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, x], [0, 0, 0, 1]]
     int x = array[2][3]; 
 
-
+    int[] arrayZeroToOne  = new int[10];
+    for (int i = 0; i < 10; i++){
+        arrayZeroToOne[i] = (int) ( Math.random() * 1 );
+    }
+    System.out.println();
+    System.out.println("Изначальный массив: " + java.util.Arrays.toString(arrayZeroToOne));
+    
 }
 
 /**
@@ -24,26 +30,48 @@ public class task {
  */
 private static boolean isSumBetween10And20(int a, int b) {
     // проверить, что сумма a и b лежит между 10 и 20
-    return false;
+    if (a + b >= 10 && a + b <= 20){
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 private static boolean isPositive(int x) {
     // проверить, что х положительное
-    return false;
+    if (x > 0){
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 private static void printString(String source, int repeat) {
     // напечатать строку source repeat раз
+    for (int i = 0; i < repeat; i++){
+        System.out.print(source);
+    }
 }
 
 private static boolean isLeapYear(int year) {
     // проверить, является ли год високосным. если да - return true
-    return false;
+    if (year % 400 == 0 | year % 4 == 0 && year % 100 != 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 private static int[] createArray(int len, int initalValue) {
     // должен вернуть массив длины len, каждое значение которого равно initialValue
-    return null;
+    int[] array  = new int[len];
+    for (int i = 0; i < len; i++){
+        array[i] = initalValue;
+    }
+    return array;
 }
 
 /**
