@@ -15,13 +15,55 @@ public class task {
     int[][] array = new int[4][4]; // [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, x], [0, 0, 0, 1]]
     int x = array[2][3]; 
 
+
+
+    // Задать целочисленный массив, состоящий из элементов 0 и 1. С помощью цикла и условия заменить 0 на 1, 1 на 0.
     int[] arrayZeroToOne  = new int[10];
     for (int i = 0; i < 10; i++){
-        arrayZeroToOne[i] = (int) ( Math.random() * 1 );
+        arrayZeroToOne[i] = (int) ( Math.random() * 2 );
     }
     System.out.println();
+    System.out.println();
     System.out.println("Изначальный массив: " + java.util.Arrays.toString(arrayZeroToOne));
+    for (int i = 0; i < 10; i++){
+        if (arrayZeroToOne[i] == 0){
+            arrayZeroToOne[i] = 1;
+        }
+    }
+    System.out.println("Переделанный массив: " + java.util.Arrays.toString(arrayZeroToOne));
     
+
+
+    //Задать массив, пройти по нему циклом, и числа меньшие 6 умножить на 2.
+    int[] arrayLessSix  = new int[12];
+    for (int i = 0; i < 12; i++){
+        arrayLessSix[i] = (int) ( Math.random() * 12 );
+    }
+    System.out.println();
+    System.out.println("Изначальный массив: " + java.util.Arrays.toString(arrayLessSix));
+    for (int i = 0; i < 12; i++){
+        if (arrayLessSix[i] < 6 ){
+            arrayLessSix[i] = arrayLessSix[i] * 2;
+        }
+    }
+    System.out.println("Переделанный массив: " + java.util.Arrays.toString(arrayLessSix));
+    
+    
+    
+    //Создать квадратный двумерный целочисленный массив и с помощью цикла(-ов) заполнить 
+    //его диагональные элементы единицами.
+    System.out.println();
+    for (int i = 0; i < array.length; i++) {  
+            for (int j = 0; j < array.length; j++) {
+                if (j == i | j + i == array.length - 1){
+                    array[i][j] = 1;
+                }
+                System.out.print(array[i][j]+" "); 
+            }
+            System.out.println();
+        }
+
+
 }
 
 /**
